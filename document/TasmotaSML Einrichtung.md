@@ -67,8 +67,8 @@ Manche Zähler haben binäre Codierung:
 
 IN der Console folgenden Befehl eingeben:
 
-`Sensor53 d1` Hiermit werden Rohdaten in der Console ausgegeben
-`Sensor53 d0` Hiermit werden Rohdaten in der Console deaktiviert
+- `Sensor53 d1` Hiermit werden Rohdaten in der Console ausgegeben
+- `Sensor53 d0` Hiermit werden Rohdaten in der Console deaktiviert
 
 1 Steht dabei für den ersten definierten Zähler
 man kann bis zu 5 Zähler im Script definieren
