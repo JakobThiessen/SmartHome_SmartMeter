@@ -1,0 +1,89 @@
+# Tasmota für SML einrichten
+
+1. extra Firware aufspielen.
+2. Script erstellen
+3. Test
+4. Hilfe Links
+
+
+
+## Firmware einerichten
+
+`user_config_override.h` ergänzen um die folgenden Zeilen:
+
+```
+#ifndef USE_SCRIPT
+#define USE_SCRIPT
+#endif
+#ifndef USE_SML_M
+#define USE_SML_M
+#endif
+#ifdef USE_RULES
+#undef USE_RULES
+#endif
+```
+
+## Script erstellen
+
+ASCII ausgabe des Zählers eZH.....
+```
+\EMH5----eHZ-E0028E<\r><\n>
+<\r><\n>
+1-0:0.0.0*255(331210-5002855)<\r><\n>
+1-0:1.8.1*255(075595.6918)<\r><\n>
+1-0:96.5.5*255(82)<\r><\n>
+0-0:96.1.255*255(0000952727)<\r><\n>
+!
+```
+Script
+
+```
+>D
+>B
+->sensor53 r
+>M 1  
++1,3,o,1,9600,OBIS
+1,1-0:0.0.0*255(@1,Meter Nr,, Meter_number,0
+1,1-0:1.8.1*255(@1,Total consumption, KWh,Total_in,4
+1,1-0:96.5.5*255(@1, Status,,Status,0
+1,0-0:96.1.255*255(@1, Herstellernummer,,Herstellernummer,0
+#
+```
+
+Manche Zähler haben binäre Codierung: 
+```
+>D  
+>B  
+->sensor53 r
+>M 1  
++1,3,s,0,9600,SML  
+1,77070100010800ff@1000,Total consumption,KWh,Total_in,4  
+1,77070100020800ff@1000,Total Feed,KWh,Total_out,4  
+1,77070100100700ff@1,Current consumption,W,Power_curr,0  
+1,77070100000009ff@#,Meter Nr,,Meter_number,0  
+#
+```
+## Test
+
+IN der Console folgenden Befehl eingeben:
+
+`Sensor53 d1` Hiermit werden Rohdaten in der Console ausgegeben
+`Sensor53 d0` Hiermit werden Rohdaten in der Console deaktiviert
+
+1 Steht dabei für den ersten definierten Zähler
+man kann bis zu 5 Zähler im Script definieren
+
+
+## Hilfe Links
+
+Tasmota (Smart Meter Interface) https://tasmota.github.io/docs/Smart-Meter-Interface/
+
+Befehl `Sensor53` https://tasmota.github.io/docs/Commands/#sensor53
+
+Hilfe Info:
+ 
+HowTo: https://wvssiot.files.wordpress.com/2020/04/howto_-tasmota-sml.pdf
+
+PinOut von NodeMCU esp8266: https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
+
+https://www.msxfaq.de/sonst/bastelbude/smartmeter_d0_sml.htm
