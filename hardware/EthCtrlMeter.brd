@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -73,7 +73,7 @@
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="no" active="no"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYzBhZTFk" projecturn="a.cGVyc29uYWw6dWUyYzBhZTFkIzIwMjEwNDE3NDAzOTg2MzA2" f3durn="urn:adsk.wipprod:dm.lineage:QqtcW-pHTzKlH9XkH0GQuw" pcbguid="" lastpulledtime="2022-01-10T20:19:45Z" lastsyncedchangeguid="" latestrevisionid="7b5390ac-47e2-4a57-a6a9-9916ae84fb58" lastsyncedrevisionid="7b5390ac-47e2-4a57-a6a9-9916ae84fb58" lastboardhashguid="d29f7d26-245f-ad2a-6957-bbebb5ddb7d6" lastpushedtime="2022-01-10T20:43:02Z" linktopcb3d="true"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYzBhZTFk" projecturn="a.cGVyc29uYWw6dWUyYzBhZTFkIzIwMjEwNDE3NDAzOTg2MzA2" f3durn="urn:adsk.wipprod:dm.lineage:QqtcW-pHTzKlH9XkH0GQuw" pcbguid="" lastpulledtime="2022-01-10T20:19:45Z" lastsyncedchangeguid="" latestrevisionid="7b5390ac-47e2-4a57-a6a9-9916ae84fb58" lastsyncedrevisionid="7b5390ac-47e2-4a57-a6a9-9916ae84fb58" lastboardhashguid="d29f7d26-245f-ad2a-6957-bbebb5ddb7d6" lastpushedtime="2022-01-10T20:43:02Z" linktopcb3d="false"/>
 <plain>
 <polygon width="0.1524" layer="39">
 <vertex x="9.4" y="0"/>
@@ -2350,7 +2350,7 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="C" x="50.9" y="6" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="51.535" y="7.905" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R23" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="27R" x="50.9" y="10.1" smashed="yes">
+<element name="R23" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="DNP" x="50.9" y="10.1" smashed="yes">
 <attribute name="NAME" x="52.465" y="9.935" size="0.8128" layer="25"/>
 <attribute name="POPULARITY" value="70" x="50.9" y="10.1" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="50.9" y="10.1" size="1.778" layer="27" display="off"/>
@@ -2386,7 +2386,7 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="55.2" y="11.2" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="VALUE" x="55.835" y="9.295" size="1.27" layer="28" rot="MR0"/>
 </element>
-<element name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="27R" x="59.9" y="4.6" smashed="yes" rot="MR270">
+<element name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="DNP" x="59.9" y="4.6" smashed="yes" rot="MR270">
 <attribute name="NAME" x="58.465" y="2.965" size="0.8128" layer="26" rot="MR180"/>
 <attribute name="POPULARITY" value="70" x="59.9" y="4.6" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="59.9" y="4.6" size="1.778" layer="28" rot="MR270" display="off"/>
@@ -2428,7 +2428,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="8.5" y="5.8" size="0.8128" layer="25" rot="SR270" align="center"/>
 <attribute name="VALUE" x="8.5" y="2.7" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="R31" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="27R" x="50.9" y="12.1" smashed="yes">
+<element name="R31" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="33R" x="50.9" y="12.1" smashed="yes">
 <attribute name="NAME" x="49.565" y="12.835" size="0.8128" layer="25"/>
 <attribute name="POPULARITY" value="70" x="50.9" y="12.1" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="50.9" y="12.1" size="1.778" layer="27" display="off"/>
