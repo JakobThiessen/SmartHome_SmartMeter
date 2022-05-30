@@ -22,6 +22,8 @@
 #endif
 ```
 
+precompiled binaries: [a relative link](SmartHome_SmartMeter/firmware_precompiled)
+
 ## ETH Settings
 
 Main --> Console --> folgende Befehle nacheinander eingeben:
