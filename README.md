@@ -8,5 +8,6 @@ Smart Meter ist ein Modul (ESP32 + ETH) mit 6 Eingängen, die beliebig, über ei
 
 # Tasmota Einrichtung
 
-[Link zum document](../Tasmota Einrichtung.md)
-[precompiled binaries](../firmware_precompiled)
+Hier findest du die Dokumentation: [settings](documentation/Tasmota Einrichtung.md)
+
+HIer findest du vorkompilierte firmware: [precompiled binaries](/firmware_precompiled)
