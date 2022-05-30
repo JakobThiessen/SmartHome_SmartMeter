@@ -5,3 +5,7 @@ Smart Meter ist ein Modul (ESP32 + ETH) mit 6 Eingängen, die beliebig, über ei
 
 
 ![ASB](pict/SmartMeter_3D_Modul_mit_Gehause.png)
+
+# Tasmota Einrichtung
+
+[Link zum document](document/Tasmota Einrichtung.md)
