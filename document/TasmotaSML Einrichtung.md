@@ -24,14 +24,14 @@
 
 ## ETH Settings
 
-Main --> Console --> folgende Befehle
+Main --> Console --> folgende Befehle nacheinander eingeben:
 
-´´´
-EthType 0
-EthAddress 0
-EthClockMode 3
-
-´´´
+```
+Ethernet 1 (default)
+EthType 0 (default)
+EthAddress 0 (default)
+EthClockMode 3 (3 = ETH_CLOCK_GPIO17_OUT)
+```
 
 ## Script erstellen
 
