@@ -1,11 +1,10 @@
-# Tasmota für SML einrichten
+# Tasmota für ETH & SML einrichten
 
 1. extra Firware aufspielen.
-2. Script erstellen
-3. Test
-4. Hilfe Links
-
-
+2. ETH Settings
+3. Script erstellen
+4. Test
+5. Hilfe Links
 
 ## Firmware einerichten
 
@@ -22,6 +21,17 @@
 #undef USE_RULES
 #endif
 ```
+
+## ETH Settings
+
+Main --> Console --> folgende Befehle
+
+´´´
+EthType 0
+EthAddress 0
+EthClockMode 3
+
+´´´
 
 ## Script erstellen
 
