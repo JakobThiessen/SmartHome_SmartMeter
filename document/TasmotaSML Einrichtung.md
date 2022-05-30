@@ -22,7 +22,7 @@
 #endif
 ```
 
-precompiled binaries: [a relative link](SmartHome_SmartMeter/firmware_precompiled)
+[precompiled binaries](SmartHome_SmartMeter/tree/main/firmware_precompiled)
 
 ## ETH Settings
 
