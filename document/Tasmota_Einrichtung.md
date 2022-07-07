@@ -99,3 +99,5 @@ HowTo: https://wvssiot.files.wordpress.com/2020/04/howto_-tasmota-sml.pdf
 PinOut von NodeMCU esp8266: https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
 
 https://www.msxfaq.de/sonst/bastelbude/smartmeter_d0_sml.htm
+
+Test
