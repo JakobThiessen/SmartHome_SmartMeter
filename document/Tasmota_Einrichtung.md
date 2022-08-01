@@ -85,7 +85,43 @@ IN der Console folgenden Befehl eingeben:
 1 Steht dabei für den ersten definierten Zähler
 man kann bis zu 5 Zähler im Script definieren
 
+## openHAB Beispiel
 
+In openHAB muss ein Generic MQTT Thing angelegt werden.
+Wobei das Topic und auch der JSONPATH auf die jeweiligen Einstellungen im Tasmota Modul angepasst werden muss.
+Tasmota schickt die Werte über das `Tele` Topic. Das Interval steht standartmässig auf 60s. Dies kann mit dem Konsolen Befehl `TelePeriod` auf minimal 10sek herabgesetzt werden.
+
+Der Code sollte ungefähr so aussehen:
+
+```
+UID: mqtt:topic:MQTTBroker:SmartMeter
+label: SmartMeter
+thingTypeUID: mqtt:topic
+configuration:
+  payloadNotAvailable: Offline
+  availabilityTopic: tele/SmartMeter/LWT
+  payloadAvailable: Online
+bridgeUID: mqtt:broker:MQTTBroker
+channels:
+  - id: TotalConsumption
+    channelTypeUID: mqtt:number
+    label: TotalConsumption
+    description: ""
+    configuration:
+      unit: kWh
+      formatBeforePublish: "%.3f"
+      stateTopic: tele/SmartMeter/SENSOR
+      transformationPattern: JSONPATH:$.SML.Total_in
+  - id: CurrentConsumption
+    channelTypeUID: mqtt:number
+    label: CurrentConsumption
+    description: ""
+    configuration:
+      unit: W
+      formatBeforePublish: "%.3f"
+      stateTopic: tele/SmartMeter/SENSOR
+      transformationPattern: JSONPATH:$.SML.Power_curr
+```
 ## Hilfe Links
 
 Tasmota (Smart Meter Interface) https://tasmota.github.io/docs/Smart-Meter-Interface/
@@ -99,5 +135,3 @@ HowTo: https://wvssiot.files.wordpress.com/2020/04/howto_-tasmota-sml.pdf
 PinOut von NodeMCU esp8266: https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
 
 https://www.msxfaq.de/sonst/bastelbude/smartmeter_d0_sml.htm
-
-Test
