@@ -22,6 +22,22 @@
 #endif
 ```
 
+Its only used by Scripting
+
+```
+// >W
+// The lines in this section are displayed in the web UI main page. Requires compiling with #define USE_SCRIPT_WEB_DISPLAY.
+#ifndef USE_SCRIPT_WEB_DISPLAY
+#define USE_SCRIPT_WEB_DISPLAY
+#endif
+
+// >J
+// The lines in this section are published via MQTT in a JSON payload on TelePeriod. Requires compiling with #define USE_SCRIPT_JSON_EXPORT.
+#ifndef USE_SCRIPT_JSON_EXPORT
+#define USE_SCRIPT_JSON_EXPORT
+#endif
+```
+
 [precompiled binaries](../firmware_precompiled)
 
 ## ETH Settings
@@ -55,8 +71,8 @@ Script
 ->sensor53 r
 >M 1  
 +1,3,o,1,9600,OBIS
-1,1-0:0.0.0*255(@1,Meter Nr,, Meter_number,0
-1,1-0:1.8.1*255(@1,Total consumption, KWh,Total_in,4
+1,1-0:0.0.0*255(@1,Meter Nr,,Meter_number,0
+1,1-0:1.8.1*255(@1,Total consumption,KWh,Total_in,4
 1,1-0:96.5.5*255(@1, Status,,Status,0
 1,0-0:96.1.255*255(@1, Herstellernummer,,Herstellernummer,0
 #
@@ -68,13 +84,76 @@ Manche Zähler haben binäre Codierung:
 >B  
 ->sensor53 r
 >M 1  
-+1,3,s,0,9600,SML  
++1,3,s,0,9600,OBIS  
 1,77070100010800ff@1000,Total consumption,KWh,Total_in,4  
 1,77070100020800ff@1000,Total Feed,KWh,Total_out,4  
 1,77070100100700ff@1,Current consumption,W,Power_curr,0  
 1,77070100000009ff@#,Meter Nr,,Meter_number,0  
 #
 ```
+
+
+Will man ein paar Berechnungen machen und die Werte auch veröffentlichen (siehe Skript unten), dann muss man die beiden Zeilen: `#define USE_SCRIPT_WEB_DISPLAY` und `#define USE_SCRIPT_JSON_EXPORT` beim Compilieren einbinden.
+
+nähere Beschreibung findet man hier: https://tasmota.github.io/docs/Scripting-Language/
+
+
+```
+>D
+pin=0
+pi_s=0
+pi_m=0
+pi_m_add=0
+pi_h=0
+sec=0
+min=0
+
+>B
+->sensor53 r
+
+>T
+pin=OBIS#Total_in
+
+>S
+sec=sec+1
+
+if sec>59
+then
+sec=0
+min=min+1
+pi_m=pin-pi_s
+pi_s=pin
+pi_m_add=pi_m_add+pi_m
+print POWER per minute = %pi_m%
+endif
+
+if min>60
+then
+min=0
+pi_h=pi_m_add
+pi_m_add=0
+print POWER per hour = %pi_h%
+endif
+
+>W
+Minute_Consumption: {m} %pi_m% kW
+Houtly_Consumption: {m} %pi_h% kW
+@ck(enable "timers active ")
+@<hr>
+
+>J
+,"minute_consumption":%pi_m%
+,"hourly_consumption":%pi_h%
+
+>M 1
++1,16,o,1,9600,OBIS
+1,1-0:0.0.0*255(@1,Meter Nr,,Meter_number,0
+1,1-0:1.8.1*255(@1,Total consumption, KWh,Total_in,4
+1,1-0:96.5.5*255(@1, Status,,Status,0
+1,0-0:96.1.255*255(@1, Herstellernummer,,Herstellernummer,0
+#
+```
+
 ## Test
 
 IN der Console folgenden Befehl eingeben:
