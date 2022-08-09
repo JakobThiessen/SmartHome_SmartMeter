@@ -138,8 +138,6 @@ endif
 >W
 Minute_Consumption: {m} %pi_m% kW
 Houtly_Consumption: {m} %pi_h% kW
-@ck(enable "timers active ")
-@<hr>
 
 >J
 ,"minute_consumption":%pi_m%
