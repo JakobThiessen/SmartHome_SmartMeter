@@ -31,12 +31,12 @@ https://lcsc.com/product-detail/Ethernet-ICs_Microchip-Tech-LAN8720A-CP-TR_C4522
 
 ## Pinout of ESP 8266 and WEMOS-D1
 
-| Label | IO    | Beschreibung      |
-|-------|-------|-------------------|
-| IN01  | IO01  | GPIO/TXD0
-| IN02  | IO03  | GPIO/RXD0
-| IN03  | IO05  | GPIO
-| IN04  | IO033 | GPIO/ADC_CH5
-| IN05  | IO016 | GPIO/RXD_2
-| AIN   | IO034 | GPIO/ADC_CH6
+| Label | IO    | Beschreibung      | 
+|-------|-------|-------------------|----------
+| IN01  | IO01  | GPIO/TXD0         | 
+| IN02  | IO03  | GPIO/RXD0         | 
+| IN03  | IO05  | GPIO              | 
+| IN04  | IO033 | GPIO/ADC_CH5      | used as Counter
+| IN05  | IO016 | GPIO/RXD_2        | used for SML (See Script)
+| AIN   | IO034 | GPIO/ADC_CH6      | 
 
