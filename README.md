@@ -26,3 +26,17 @@ https://lcsc.com/product-detail/Ethernet-Connectors-Modular-Connectors-RJ45-RJ11
 
 PHY LAN8720A    https://www.microchip.com/en-us/product/LAN8720A
 https://lcsc.com/product-detail/Ethernet-ICs_Microchip-Tech-LAN8720A-CP-TR_C45223.html 
+
+# Pinout
+
+## Pinout of ESP 8266 and WEMOS-D1
+
+| Label | IO    | Beschreibung      |
+|-------|-------|-------------------|
+| IN01  | IO01  | GPIO/TXD0
+| IN02  | IO03  | GPIO/RXD0
+| IN03  | IO05  | GPIO
+| IN04  | IO033 | GPIO/ADC_CH5
+| IN05  | IO016 | GPIO/RXD_2
+| AIN   | IO034 | GPIO/ADC_CH6
+
