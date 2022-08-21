@@ -1,13 +1,19 @@
 # SmartHome_SmartMeter
 Smart Meter ist ein Modul (ESP32 + ETH) mit 6 Eingängen, die beliebig, über ein Script, konfiguriert werden können.
 
-![ASB](pict/SmartHome_3D_Leiterplatte.png)
+<p float="left">
+  <img src="pict/SmartHome_3D_Leiterplatte.png" width="500" />
+  <img src="pict/SmartMeter_3D_Modul_mit_Gehause.png" width="500" />
+</p>
 
 
-![ASB](pict/SmartMeter_3D_Modul_mit_Gehause.png)
 
 
-![ASB](pict/IR_Sensor.png)
+
+
+<img src="pict/IR_Sensor.png" width=20% height=20%>
+
+IR_Sensor
 
 # Tasmota Einrichtung
 
@@ -29,11 +35,10 @@ https://lcsc.com/product-detail/Ethernet-ICs_Microchip-Tech-LAN8720A-CP-TR_C4522
 
 # Pinout
 
-## Pinout of ESP 8266 and WEMOS-D1
 
-| Label | IO    | Beschreibung      | 
-|-------|-------|-------------------|----------
-| IN01  | IO01  | GPIO/TXD0         | 
+| Label | IO    | Beschreibung      |                          |
+|-------|-------|-------------------|--------------------------|
+| IN01  | IO01  | GPIO/TXD0         |                          |
 | IN02  | IO03  | GPIO/RXD0         | 
 | IN03  | IO05  | GPIO              | 
 | IN04  | IO033 | GPIO/ADC_CH5      | used as Counter
