@@ -45,3 +45,6 @@ https://lcsc.com/product-detail/Ethernet-ICs_Microchip-Tech-LAN8720A-CP-TR_C4522
 | IN05  | IO016 | GPIO/RXD_2        | used for SML (See Script)
 | AIN   | IO034 | GPIO/ADC_CH6      | 
 
+# Tasmota Pinconfiguration
+
+![](document/tasmota_configuration.png)
